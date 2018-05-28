@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Live coding activtiy on may 16th, 2018-->
+<head>
+  <meta charset="utf-8">
+  <title>Msging App!</title>
+  
+  <!--Link Bootstrap-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  
+  <!--Link style.css-->
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+<div id="currentSchedule">
+    <h3>Current Train Schedule</h3>
+    <table id="trainList">
+    </table>
+</div>
+
+<div id="addTrain">
+    <h3>Add Train</h3>
+    <div class="form-group">
+        <!-- creates a text area that is read only-->
+
+        <label>Train Name: </label>
+        <input id="trainName" type="text">
+
+        <label>Destination: </label>
+        <input id="destination" type="text">
+
+        <label>First Train (in Military time - HH:MM): </label>
+        <input id="firstTrain" type="text">
+
+        <label>Frequency (in Minutes): </label>
+        <input id="freq" type="text">
+        
+        <button id="submitTrain" type="submit">Submit</button>
+    </div>
+</div>
+
+<!--Link Firebase-->
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
+<!--Link jQuery-->
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+
+<!--Link app.js-->
+<script src="moment.js"></script>
+</body>
+
+</html>
