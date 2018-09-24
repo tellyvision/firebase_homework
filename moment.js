@@ -163,9 +163,6 @@ $(document).ready(function() {
         $("#data-ftime").val("");
         $("#data-freq").val("");
 
-        // Disable "New" and "Delete" buttons
-        $("#select-newData").attr("disabled", "disabled");
-        $("#select-delData").attr("disabled", "disabled");
     });
 
     // Set timer
@@ -177,5 +174,4 @@ $(document).ready(function() {
         }
     }, 1000);	
 
-    // database.ref("/TrainSchedule").set({});	// clear data in Firebase
     });
