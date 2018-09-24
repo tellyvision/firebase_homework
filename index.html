@@ -1,56 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
-<!-- Live coding activtiy on may 16th, 2018-->
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>Msging App!</title>
-  
-  <!--Link Bootstrap-->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-  
-  <!--Link style.css-->
-  <link rel="stylesheet" type="text/css" href="style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Train Scheduler</title>
+
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.5.1/firebase.js"></script>
+	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+ 	<script src="moment.js"></script>
 </head>
-
 <body>
-<div id="currentSchedule">
-    <h3>Current Train Schedule</h3>
-    <table id="trainList">
-    </table>
-</div>
+	<div class="container">
+			<h1>Train Scheduler</h1>
 
-<div id="addTrain">
-    <h3>Add Train</h3>
-    <div class="form-group">
-        <!-- creates a text area that is read only-->
+		<section class="train-info">
+				<h2> Current Train Schedule </h2>
+				<h3 id="curtime"></h3>
 
-        <label>Train Name: </label>
-        <input id="trainName" type="text">
+			<div class="panel-body">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Train Name</th>
+							<th>Destination</th>
+							<th>Frequency (min)</th>
+							<th>Next Arrival</th>
+							<th>Minutes Away</th>
+						</tr>
+					</thead> 
+					<tbody id="display-schedule">
 
-        <label>Destination: </label>
-        <input id="destination" type="text">
+					</tbody>
+				</table>
+			</div>
+		</section>
 
-        <label>First Train (in Military time - HH:MM): </label>
-        <input id="firstTrain" type="text">
+		<section class="panel panel-ut">
+                <h2> Current Train Schedule </h2>
+			<div class="panel-body">
+				<form id="schedule-form">
+					<label for="data-name">Train Name</label><br>
+					<input type="text" class="form-control" id="data-name" required><br>
+					<label for="data-dest">Destination</label><br>
+					<input type="text" class="form-control" id="data-dest" required><br>
+					<label for="data-ftime">First Train Time (hh:mm AM/PM - ex. 03:30 AM)</label><br>
+					<input type="time" class="form-control" id="data-ftime" required><br>
+					<label for="data-freq">Frequency (min)</label><br>
+					<input type="number" class="form-control" id="data-freq" required><br>
 
-        <label>Frequency (in Minutes): </label>
-        <input id="freq" type="text">
-        
-        <button id="submitTrain" type="submit">Submit</button>
-    </div>
-</div>
-
-<!--Link Firebase-->
-<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-
-<!--Link jQuery-->
-<script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
-
-<!--Link app.js-->
-<script src="moment.js"></script>
+					<button class="btn btn-md" id="select-addData">Submit</button>
+					<button class="btn btn-md" id="select-newData">New</button>
+					<button class="btn bbtn-md" id="select-delData">Delete</button>	
+				</form>
+			</div>
+		</section>
+	</div>
 </body>
-
 </html>
+
